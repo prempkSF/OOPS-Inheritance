@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace SingleInheritance
+namespace MultiLevelInheritance
 {
     //Derived Class (Child Class)
     //Derived Class:Base Class
@@ -14,11 +10,19 @@ namespace SingleInheritance
         public static int AaadharRegistrationID{get; set;}
         public string Address { get; set; }
 
-        //Here for creating a dervied class object need to get the properties of parent class and pass those values to parent class parameter constructor using -->:base(values)
+        //Here for creating a dervied class object need to get the properties of parent class and pass those values to parent class parameter constructor
         public AaadharRegistration(int registrationID,string name,string fatherName,string dob,string registrationDate,string gender,string address):base(registrationID, name,fatherName,dob,registrationDate,gender)
         {
             s_aadharRegistrationID++;
             AaadharRegistrationID=s_aadharRegistrationID;
+            Address=address;
+        }
+
+        //From Child Class Student Details
+        public AaadharRegistration(int registrationID,string name,string fatherName,string dob,string registrationDate,string gender,int aaadharRegistrationID,string address):base(registrationID, name,fatherName,dob,registrationDate,gender)
+        {
+            
+            AaadharRegistrationID=aaadharRegistrationID;
             Address=address;
         }
         public string DisplayAaadharRegistration()

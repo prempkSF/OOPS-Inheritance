@@ -4,6 +4,7 @@ namespace SingleInheritance;
 
 class Program 
 {
+    //Single Level Inheritance One Parent One Child Parent--->Child
     public static void Main(string[] args)
     {
         //Parent Class Instance
